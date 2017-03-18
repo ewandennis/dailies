@@ -1,0 +1,13 @@
+<h2>Show editor</h2>
+
+<ul>
+
+  <li>
+    <strong>Url:</strong>
+    <%= @editor.url %>
+  </li>
+
+</ul>
+
+<%= link "Edit", to: editor_path(@conn, :edit, @editor) %>
+<%= link "Back", to: editor_path(@conn, :index) %>

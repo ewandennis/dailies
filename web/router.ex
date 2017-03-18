@@ -19,8 +19,14 @@ defmodule Giflator.Router do
     get "/", PageController, :index
   end
 
-  # Other scopes may use custom stacks.
-  # scope "/api", Giflator do
-  #   pipe_through :api
-  # end
+  scope "/editor", Giflator do
+    pipe_through :browser
+
+    resources "/", EditorController
+  end
+
+  scope "/api", Giflator do
+    pipe_through :api
+    resources "/slides", SlideController
+  end
 end

@@ -1,0 +1,6 @@
+<h2>New editor</h2>
+
+<%= render "form.html", changeset: @changeset,
+                        action: editor_path(@conn, :create) %>
+
+<%= link "Back", to: editor_path(@conn, :index) %>

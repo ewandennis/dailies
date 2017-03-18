@@ -1,0 +1,26 @@
+<h2>Listing editor</h2>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Url</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for editor <- @editor do %>
+    <tr>
+      <td><%= editor.url %></td>
+
+      <td class="text-right">
+        <%= link "Show", to: editor_path(@conn, :show, editor), class: "btn btn-default btn-xs" %>
+        <%= link "Edit", to: editor_path(@conn, :edit, editor), class: "btn btn-default btn-xs" %>
+        <%= link "Delete", to: editor_path(@conn, :delete, editor), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" %>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<%= link "New editor", to: editor_path(@conn, :new) %>

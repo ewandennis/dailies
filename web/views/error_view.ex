@@ -1,12 +1,28 @@
 defmodule Giflator.ErrorView do
   use Giflator.Web, :view
 
+  def render("400.html", _assigns) do
+    "Bad request"
+  end
+
+  def render("400.json", _assigns) do
+    %{errors: %{detail: "Bad request"}}
+  end
+
   def render("404.html", _assigns) do
     "Page not found"
   end
 
+  def render("404.json", _assigns) do
+    %{errors: %{detail: "Page not found"}}
+  end
+
   def render("500.html", _assigns) do
     "Internal server error"
+  end
+
+  def render("500.json", _assigns) do
+    %{errors: %{detail: "Internal server error"}}
   end
 
   # In case no render clause matches or no

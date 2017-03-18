@@ -1,0 +1,6 @@
+<h2>Edit Slide</h2>
+
+<%= render "form.html", changeset: @changeset,
+                        action: slide_path(@conn, :update, @editor) %>
+
+<%= link "Back", to: slide_path(@conn, :index) %>
