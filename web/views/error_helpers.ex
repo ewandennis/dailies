@@ -1,4 +1,4 @@
-defmodule Giflator.ErrorHelpers do
+defmodule Dailies.ErrorHelpers do
   @moduledoc """
   Conveniences for translating and building error messages.
   """
@@ -32,9 +32,9 @@ defmodule Giflator.ErrorHelpers do
     #     dgettext "errors", "is invalid"
     #
     if count = opts[:count] do
-      Gettext.dngettext(Giflator.Gettext, "errors", msg, msg, count, opts)
+      Gettext.dngettext(Dailies.Gettext, "errors", msg, msg, count, opts)
     else
-      Gettext.dgettext(Giflator.Gettext, "errors", msg, opts)
+      Gettext.dgettext(Dailies.Gettext, "errors", msg, opts)
     end
   end
 end

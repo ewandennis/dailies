@@ -1,3 +1,3 @@
-defmodule Giflator.PageView do
-  use Giflator.Web, :view
+defmodule Dailies.PageView do
+  use Dailies.Web, :view
 end

@@ -1,7 +1,7 @@
-defmodule Giflator.SlideTest do
-  use Giflator.ModelCase
+defmodule Dailies.SlideTest do
+  use Dailies.ModelCase
 
-  alias Giflator.Slide
+  alias Dailies.Slide
 
   @valid_attrs %{url: "some content"}
   @invalid_attrs %{}

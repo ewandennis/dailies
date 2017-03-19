@@ -1,7 +1,7 @@
-defmodule Giflator.SlideController do
-  use Giflator.Web, :controller
+defmodule Dailies.SlideController do
+  use Dailies.Web, :controller
 
-  alias Giflator.Slide
+  alias Dailies.Slide
 
   def index(conn, _params) do
     slides = Repo.all(Slide)
@@ -20,7 +20,7 @@ defmodule Giflator.SlideController do
       {:error, changeset} ->
         conn
         |> put_status(:unprocessable_entity)
-        |> render(Giflator.ChangesetView, "error.json", changeset: changeset)
+        |> render(Dailies.ChangesetView, "error.json", changeset: changeset)
     end
   end
 
@@ -39,7 +39,7 @@ defmodule Giflator.SlideController do
       {:error, changeset} ->
         conn
         |> put_status(:unprocessable_entity)
-        |> render(Giflator.ChangesetView, "error.json", changeset: changeset)
+        |> render(Dailies.ChangesetView, "error.json", changeset: changeset)
     end
   end
 

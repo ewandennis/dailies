@@ -1,7 +1,7 @@
-defmodule Giflator.EditorController do
-  use Giflator.Web, :controller
+defmodule Dailies.EditorController do
+  use Dailies.Web, :controller
 
-  alias Giflator.Slide
+  alias Dailies.Slide
 
   def index(conn, _params) do
     editor = Repo.all(Slide)

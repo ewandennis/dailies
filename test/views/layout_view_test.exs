@@ -1,3 +1,3 @@
-defmodule Giflator.LayoutViewTest do
-  use Giflator.ConnCase, async: true
+defmodule Dailies.LayoutViewTest do
+  use Dailies.ConnCase, async: true
 end

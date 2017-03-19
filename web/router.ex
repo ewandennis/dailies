@@ -1,5 +1,5 @@
-defmodule Giflator.Router do
-  use Giflator.Web, :router
+defmodule Dailies.Router do
+  use Dailies.Web, :router
 
   pipeline :browser do
     plug :accepts, ["html"]
@@ -13,19 +13,19 @@ defmodule Giflator.Router do
     plug :accepts, ["json"]
   end
 
-  scope "/", Giflator do
+  scope "/", Dailies do
     pipe_through :browser # Use the default browser stack
 
     get "/", PageController, :index
   end
 
-  scope "/editor", Giflator do
+  scope "/editor", Dailies do
     pipe_through :browser
 
     resources "/", EditorController
   end
 
-  scope "/api", Giflator do
+  scope "/api", Dailies do
     pipe_through :api
     resources "/slides", SlideController
   end

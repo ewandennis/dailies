@@ -1,3 +1,3 @@
-defmodule Giflator.LayoutView do
-  use Giflator.Web, :view
+defmodule Dailies.LayoutView do
+  use Dailies.Web, :view
 end

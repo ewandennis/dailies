@@ -1,7 +1,7 @@
-defmodule Giflator.EditorControllerTest do
-  use Giflator.ConnCase
+defmodule Dailies.EditorControllerTest do
+  use Dailies.ConnCase
 
-  alias Giflator.Editor
+  alias Dailies.Editor
   @valid_attrs %{url: "some content"}
   @invalid_attrs %{}
 

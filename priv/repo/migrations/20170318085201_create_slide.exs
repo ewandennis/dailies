@@ -1,4 +1,4 @@
-defmodule Giflator.Repo.Migrations.CreateSlide do
+defmodule Dailies.Repo.Migrations.CreateSlide do
   use Ecto.Migration
 
   def change do

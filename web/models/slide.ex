@@ -1,5 +1,5 @@
-defmodule Giflator.Slide do
-  use Giflator.Web, :model
+defmodule Dailies.Slide do
+  use Dailies.Web, :model
 
   schema "slides" do
     field :url, :string

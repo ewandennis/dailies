@@ -1,5 +1,5 @@
-defmodule Giflator.PageControllerTest do
-  use Giflator.ConnCase
+defmodule Dailies.PageControllerTest do
+  use Dailies.ConnCase
 
   test "GET /", %{conn: conn} do
     conn = get conn, "/"

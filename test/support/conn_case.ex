@@ -1,4 +1,4 @@
-defmodule Giflator.ConnCase do
+defmodule Dailies.ConnCase do
   @moduledoc """
   This module defines the test case to be used by
   tests that require setting up a connection.
@@ -20,23 +20,23 @@ defmodule Giflator.ConnCase do
       # Import conveniences for testing with connections
       use Phoenix.ConnTest
 
-      alias Giflator.Repo
+      alias Dailies.Repo
       import Ecto
       import Ecto.Changeset
       import Ecto.Query
 
-      import Giflator.Router.Helpers
+      import Dailies.Router.Helpers
 
       # The default endpoint for testing
-      @endpoint Giflator.Endpoint
+      @endpoint Dailies.Endpoint
     end
   end
 
   setup tags do
-    :ok = Ecto.Adapters.SQL.Sandbox.checkout(Giflator.Repo)
+    :ok = Ecto.Adapters.SQL.Sandbox.checkout(Dailies.Repo)
 
     unless tags[:async] do
-      Ecto.Adapters.SQL.Sandbox.mode(Giflator.Repo, {:shared, self()})
+      Ecto.Adapters.SQL.Sandbox.mode(Dailies.Repo, {:shared, self()})
     end
 
     {:ok, conn: Phoenix.ConnTest.build_conn()}

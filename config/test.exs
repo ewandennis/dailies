@@ -2,7 +2,7 @@ use Mix.Config
 
 # We don't run a server during test. If one is required,
 # you can enable the server option below.
-config :giflator, Giflator.Endpoint,
+config :dailies, Dailies.Endpoint,
   http: [port: 4001],
   server: false
 
@@ -10,10 +10,10 @@ config :giflator, Giflator.Endpoint,
 config :logger, level: :warn
 
 # Configure your database
-config :giflator, Giflator.Repo,
+config :dailies, Dailies.Repo,
   adapter: Ecto.Adapters.Postgres,
   username: "postgres",
   password: "postgres",
-  database: "giflator_test",
+  database: "dailies_test",
   hostname: "localhost",
   pool: Ecto.Adapters.SQL.Sandbox

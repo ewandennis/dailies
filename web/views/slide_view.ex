@@ -1,12 +1,12 @@
-defmodule Giflator.SlideView do
-  use Giflator.Web, :view
+defmodule Dailies.SlideView do
+  use Dailies.Web, :view
 
   def render("index.json", %{slides: slides}) do
-    %{data: render_many(slides, Giflator.SlideView, "slide.json")}
+    %{data: render_many(slides, Dailies.SlideView, "slide.json")}
   end
 
   def render("show.json", %{slide: slide}) do
-    %{data: render_one(slide, Giflator.SlideView, "slide.json")}
+    %{data: render_one(slide, Dailies.SlideView, "slide.json")}
   end
 
   def render("slide.json", %{slide: slide}) do

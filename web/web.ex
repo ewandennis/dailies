@@ -1,12 +1,12 @@
-defmodule Giflator.Web do
+defmodule Dailies.Web do
   @moduledoc """
   A module that keeps using definitions for controllers,
   views and so on.
 
   This can be used in your application as:
 
-      use Giflator.Web, :controller
-      use Giflator.Web, :view
+      use Dailies.Web, :controller
+      use Dailies.Web, :view
 
   The definitions below will be executed for every view,
   controller, etc, so keep them short and clean, focused
@@ -30,12 +30,12 @@ defmodule Giflator.Web do
     quote do
       use Phoenix.Controller
 
-      alias Giflator.Repo
+      alias Dailies.Repo
       import Ecto
       import Ecto.Query
 
-      import Giflator.Router.Helpers
-      import Giflator.Gettext
+      import Dailies.Router.Helpers
+      import Dailies.Gettext
     end
   end
 
@@ -49,9 +49,9 @@ defmodule Giflator.Web do
       # Use all HTML functionality (forms, tags, etc)
       use Phoenix.HTML
 
-      import Giflator.Router.Helpers
-      import Giflator.ErrorHelpers
-      import Giflator.Gettext
+      import Dailies.Router.Helpers
+      import Dailies.ErrorHelpers
+      import Dailies.Gettext
     end
   end
 
@@ -65,10 +65,10 @@ defmodule Giflator.Web do
     quote do
       use Phoenix.Channel
 
-      alias Giflator.Repo
+      alias Dailies.Repo
       import Ecto
       import Ecto.Query
-      import Giflator.Gettext
+      import Dailies.Gettext
     end
   end
 

@@ -6,15 +6,15 @@
 use Mix.Config
 
 # General application configuration
-config :giflator,
-  ecto_repos: [Giflator.Repo]
+config :dailies,
+  ecto_repos: [Dailies.Repo]
 
 # Configures the endpoint
-config :giflator, Giflator.Endpoint,
+config :dailies, Dailies.Endpoint,
   url: [host: "localhost"],
   secret_key_base: "qsbcbQbwq1vPCC5ANho2SXaG2vhpTYlfQMTmy4Yc9QUvEM45b2MaMxVwUlAeWDPm",
-  render_errors: [view: Giflator.ErrorView, accepts: ~w(html json)],
-  pubsub: [name: Giflator.PubSub,
+  render_errors: [view: Dailies.ErrorView, accepts: ~w(html json)],
+  pubsub: [name: Dailies.PubSub,
            adapter: Phoenix.PubSub.PG2]
 
 # Configures Elixir's Logger

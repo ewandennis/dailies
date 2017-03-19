@@ -1,5 +1,5 @@
-defmodule Giflator.ErrorView do
-  use Giflator.Web, :view
+defmodule Dailies.ErrorView do
+  use Dailies.Web, :view
 
   def render("400.html", _assigns) do
     "Bad request"
