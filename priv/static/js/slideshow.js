@@ -6,6 +6,7 @@ var transitionPeriod = 2000;
 
 window.onload = function() {
   var canvas = document.getElementById('canvas');
+  document.body.style.background ='#000';
   canvas.onclick = function() {
     if (canvas.requestFullscreen) {
       canvas.requestFullscreen();

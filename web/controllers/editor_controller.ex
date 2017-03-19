@@ -13,7 +13,7 @@ defmodule Giflator.EditorController do
     render(conn, "new.html", changeset: changeset)
   end
 
-  def create(conn, %{"editor" => editor_params}) do
+  def create(conn, %{"slide" => editor_params}) do
     changeset = Slide.changeset(%Slide{}, editor_params)
 
     case Repo.insert(changeset) do
