@@ -10,8 +10,9 @@ This is a fullscreen in-browser slideshow, intended to display a looping sequenc
   * Phoenix (tested with 1.2)
   * Postgres (tested with 9.5)
 
-## Running
+## Running
 To start the service:
+
   * Clone this repo
   * Install dependencies with `mix deps.get`
   * Create and migrate your database with `mix ecto.create && mix ecto.migrate`
