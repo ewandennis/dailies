@@ -1,7 +1,7 @@
 # Dailies
 
 > "You like my dailies, Clarence?"
->  - True Romance, 1993
+>  \- True Romance, 1993
 
 This is a fullscreen in-browser slideshow, intended to display a looping sequence of interesting, usually animated visuals. It includes a little editor for managing the list of displayed URLs and a matching JSON-centric API.
 
@@ -18,6 +18,8 @@ To start the service:
   * Start Phoenix endpoint with `mix phoenix.server`
 
 Now you can visit [`localhost:4000`](http://localhost:4000) from your browser.
+
+The editor is available at [`localhost:4000/editor`](http://localhost:4000/editor).
 
 Ready to run in production? Please [check out the Phoenix deployment guides](http://www.phoenixframework.org/docs/deployment).
 
