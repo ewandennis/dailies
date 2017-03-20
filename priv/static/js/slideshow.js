@@ -51,8 +51,7 @@ function enqueueSlide(url) {
       setTimeout(nextSlide, duration < slidePeriod? slidePeriod : duration - transitionPeriod);
     });
   };
-  var newSlide = url.endsWith('.mp4') ? video(url, onload) : img(url, onload);
-  canvas.appendChild(newSlide);
+  canvas.appendChild(loadSlide(url, onload));
 }
 
 function fadeOut(obj, next) {
@@ -73,6 +72,21 @@ function fadeIn(obj, next) {
   }, 1);
 }
 
+function loadSlide(url, next) {
+  var parts = url.split('.');
+  var ext = parts[parts.length-1];
+  var ctors = {
+    mp4: video,
+    webm: video,
+    gif: img,
+    jpg: img
+  };
+  if(ctors.hasOwnProperty(ext)) {
+    return ctors[ext](url, next);
+  }
+  return null;
+}
+
 function video(url, onloadfn) {
   var vid = document.createElement('video');
   vid.autoplay = 'autoplay';
@@ -82,7 +96,7 @@ function video(url, onloadfn) {
   vid.onloadedmetadata = function() {
     presentObject(vid, vid.videoWidth, vid.videoHeight);
     setTimeout(function() {
-      onloadfn(vid, 2000); //vid.duration * 1000);
+      onloadfn(vid, vid.duration * 1000);
     }, 1);
   };
   return vid;
@@ -98,11 +112,12 @@ function img(url, onloadfn) {
   return pic;
 }
 
+var centreFn;
 function presentObject(obj, w, h) {
-  var centre;
+  var newCentreFn;
   if (w > h) {
     obj.className = 'landscape';
-    centre = function() {
+    newCentreFn = function() {
       var rect = obj.getBoundingClientRect();
       var pageRect = document.getElementById('canvas').getBoundingClientRect();
       if (pageRect.height > rect.height) {
@@ -111,7 +126,7 @@ function presentObject(obj, w, h) {
     };
   } else {
     obj.className = 'portrait';
-    centre = function() {
+    newCentreFn = function() {
       var rect = obj.getBoundingClientRect();
       var pageRect = document.body.getBoundingClientRect();
       if (pageRect.width > rect.width) {
@@ -119,7 +134,9 @@ function presentObject(obj, w, h) {
       }
     };
   }
-  setTimeout(centre, 1);
-  window.addEventListener('resize', centre);
+  setTimeout(newCentreFn, 1);
+  window.removeEventListener('resize', centreFn);
+  window.addEventListener('resize', newCentreFn);
+  centreFn = newCentreFn;
 }
 
