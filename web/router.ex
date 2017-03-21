@@ -29,4 +29,9 @@ defmodule Dailies.Router do
     pipe_through :api
     resources "/slides", SlideController
   end
+
+  scope "/webhook", Dailies do
+    pipe_through :api
+    post "/", RelayWebhookController, :post
+  end
 end
