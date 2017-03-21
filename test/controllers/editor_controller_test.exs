@@ -1,7 +1,7 @@
 defmodule Dailies.EditorControllerTest do
   use Dailies.ConnCase
 
-  alias Dailies.Editor
+  alias Dailies.Slide
   @valid_attrs %{url: "some content"}
   @invalid_attrs %{}
 
@@ -16,18 +16,18 @@ defmodule Dailies.EditorControllerTest do
   end
 
   test "creates resource and redirects when data is valid", %{conn: conn} do
-    conn = post conn, editor_path(conn, :create), editor: @valid_attrs
+    conn = post conn, editor_path(conn, :create), slide: @valid_attrs
     assert redirected_to(conn) == editor_path(conn, :index)
-    assert Repo.get_by(Editor, @valid_attrs)
+    assert Repo.get_by(Slide, @valid_attrs)
   end
 
   test "does not create resource and renders errors when data is invalid", %{conn: conn} do
-    conn = post conn, editor_path(conn, :create), editor: @invalid_attrs
+    conn = post conn, editor_path(conn, :create), slide: @invalid_attrs
     assert html_response(conn, 200) =~ "New editor"
   end
 
   test "shows chosen resource", %{conn: conn} do
-    editor = Repo.insert! %Editor{}
+    editor = Repo.insert! %Slide{}
     conn = get conn, editor_path(conn, :show, editor)
     assert html_response(conn, 200) =~ "Show editor"
   end
@@ -39,28 +39,28 @@ defmodule Dailies.EditorControllerTest do
   end
 
   test "renders form for editing chosen resource", %{conn: conn} do
-    editor = Repo.insert! %Editor{}
+    editor = Repo.insert! %Slide{}
     conn = get conn, editor_path(conn, :edit, editor)
-    assert html_response(conn, 200) =~ "Edit editor"
+    assert html_response(conn, 200) =~ "You like my dailies"
   end
 
   test "updates chosen resource and redirects when data is valid", %{conn: conn} do
-    editor = Repo.insert! %Editor{}
+    editor = Repo.insert! %Slide{}
     conn = put conn, editor_path(conn, :update, editor), editor: @valid_attrs
     assert redirected_to(conn) == editor_path(conn, :show, editor)
-    assert Repo.get_by(Editor, @valid_attrs)
+    assert Repo.get_by(Slide, @valid_attrs)
   end
 
   test "does not update chosen resource and renders errors when data is invalid", %{conn: conn} do
-    editor = Repo.insert! %Editor{}
+    editor = Repo.insert! %Slide{}
     conn = put conn, editor_path(conn, :update, editor), editor: @invalid_attrs
-    assert html_response(conn, 200) =~ "Edit editor"
+    assert html_response(conn, 200) =~ "You like my dailies"
   end
 
   test "deletes chosen resource", %{conn: conn} do
-    editor = Repo.insert! %Editor{}
+    editor = Repo.insert! %Slide{}
     conn = delete conn, editor_path(conn, :delete, editor)
     assert redirected_to(conn) == editor_path(conn, :index)
-    refute Repo.get(Editor, editor.id)
+    refute Repo.get(Slide, editor.id)
   end
 end
