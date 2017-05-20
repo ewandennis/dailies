@@ -15,7 +15,8 @@ config :dailies, Dailies.Endpoint,
   secret_key_base: "qsbcbQbwq1vPCC5ANho2SXaG2vhpTYlfQMTmy4Yc9QUvEM45b2MaMxVwUlAeWDPm",
   render_errors: [view: Dailies.ErrorView, accepts: ~w(html json)],
   pubsub: [name: Dailies.PubSub,
-           adapter: Phoenix.PubSub.PG2]
+           adapter: Phoenix.PubSub.PG2],
+  server: true
 
 # Configures Elixir's Logger
 config :logger, :console,
